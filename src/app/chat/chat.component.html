@@ -1,0 +1,29 @@
+<div *ngIf="MostrarChat" class="principal">
+  <div class="encabezado">
+    <h5 id="titulo">
+      <span>Chat de:</span>
+      <span *ngIf="!editarTitulo" (click)="editarTitulo = !editarTitulo" class="chat-de">{{ titulo }}</span >
+      <input type="text" [(ngModel)]="titulo" class="chat-de" style="width: 50px" (keyup.enter)="editarTitulo = !editarTitulo" (blur)="editarTitulo = false" *ngIf="editarTitulo">
+    </h5>
+  </div>
+
+  <div class="mensajes" style="overflow-y: auto">
+
+    <!--Cuadros de mensajes-->
+
+    <div class="card" [ngClass]="{'cuadro-mensaje-mio' : mensaje.titulo == titulo, 'cuadro-mensaje': mensaje.titulo != titulo}" *ngFor="let mensaje of listaMensajes | async">
+      <div class="card-body">
+        <p class="card-title">{{mensaje.titulo}}</p>
+        <p class="card-text">{{ mensaje.mensaje }}</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="mensaje">
+    <i class="fa fa-paper-plane icono" style="cursor: pointer" aria-hidden="true" (click)="enviarMensaje(titulo, mensaje)"></i>
+    <input type="text" class="txtbox" [(ngModel)]="mensaje" (keyup.enter)="enviarMensaje(titulo, mensaje)">
+  </div>
+</div>
+
+<button id="abrirchat" class="abrir-chat"  style="  margin-bottom: 2px;" (click)="MostrarChat = !MostrarChat" ><i class="fa fa-comments fa-2x" style="color: #fff;" aria-hidden="true"></i></button>
