@@ -6,20 +6,28 @@ import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/databa
   templateUrl: './listatarea.component.html'
 })
 export class ListatareaComponent implements OnInit {
-  tarea: FirebaseListObservable<any[]>;
+  tareas: FirebaseListObservable<any[]>;
+  tareasvistas: FirebaseListObservable<any[]>;
   nombretarea:string="";
-
+  tareaSeleccionada:string;
 
   constructor(db: AngularFireDatabase) {
-      this.tarea= db.list('/tareas');
+      this.tareas= db.list('/tareas');
+      this.tareasvistas =db.list('/tareasvistas');
+
   }
   ngOnInit() {
   }
   enviartarea(nombretarea:string){
-    this.tarea.push({
+    this.tareas.push({
       "nombretarea":nombretarea
     })
     this.nombretarea="";
   }
+   vertarea(tarea:string){
+      this.tareasvistas.push({
+        "tareasvistas":tarea
+      })
+   }
 
 }
