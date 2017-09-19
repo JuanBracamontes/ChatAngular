@@ -85,3 +85,30 @@
   right: 0;
   margin-right: 25px;
 }
+.btnagregar{
+  right:400px;
+  position: absolute;
+  margin-top:210px;
+}
+.tareas{
+  height:300px;
+  width:300px;
+  background-color:#e74c3c;
+  right:350px;
+  position: absolute;
+  margin-top:200px;
+}
+
+.col-4{
+  background-color: #2c3e50;
+}
+.col-8{
+  background-color: #ecf0f1;
+  width: 400px;
+ }
+.division{
+  margin-top:50px;
+  width:1100px;
+  height: 500px;
+  margin-left:110px;
+}

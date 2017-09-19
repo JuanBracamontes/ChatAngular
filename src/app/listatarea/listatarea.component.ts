@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-listatarea',
-  templateUrl: './listatarea.component.html',
-  styleUrls: ['./listatarea.component.css']
+  templateUrl: './listatarea.component.html'
 })
 export class ListatareaComponent implements OnInit {
 
