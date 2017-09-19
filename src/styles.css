@@ -1,4 +1,43 @@
 
+.principal{
+  border-radius: 10px 10px 10px 10px;
+  width: 25%;
+  height: 400px;
+  background-color: #e3e3ff;
+  margin-left: 73%;
+  /*margin-top: 10%;*/
+  bottom: 43px;
+  position: absolute;
+}
+.encabezado{
+  border-radius: 10px 10px 10px 10px;
+  width: 25vw;
+  height: 30px;
+  background-color: #e74c3c;
+}
+#titulo{
+  color: #e3e3ff;
+  /*text-align: center;*/
+}
+
+.chat-de{
+  width: 100px;
+  margin-left: 10px;
+  height: 20px;
+  margin-top: 5px;
+  /*opcional */
+  border-radius: 10px 10px 10px 10px;
+
+}
+.cuadro-mensaje-mio{
+  width: 250px;
+  height: 100px;
+  margin-top: 15px;
+  margin-left: 70px;
+  /*esto es aparte*/
+  margin-bottom: 9px;
+  background-color: #e74c3c;
+  color: #fff;
 }
 .mensaje{
   border-radius: 10px 10px 10px 10px;
