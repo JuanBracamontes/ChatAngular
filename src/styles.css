@@ -5,7 +5,9 @@
   height: 400px;
   background-color: #e3e3ff;
   margin-left: 73%;
-  margin-top: 10%;
+  /*margin-top: 10%;*/
+  bottom: 43px;
+  position: absolute;
 }
 .encabezado{
   border-radius: 10px 10px 10px 10px;
@@ -23,12 +25,22 @@
   margin-left: 10px;
   height: 20px;
   margin-top: 5px;
+  /*opcional */
+  border-radius: 10px 10px 10px 10px;
+
 }
 .cuadro-mensaje-mio{
   width: 250px;
   height: 100px;
   margin-top: 15px;
-  margin-left: 75px;
+  margin-left: 70px;
+  /*esto es aparte*/
+  margin-bottom: 9px;
+  background-color: #e74c3c;
+  color: #fff;
+;
+
+
 }
 .mensaje{
   border-radius: 10px 10px 10px 10px;
@@ -51,7 +63,7 @@
    cursor: pointer;
    margin-top: 15px;
    color: #fff;
-   margin-left: 299px;
+   margin-left: 10px;
  }
  .txtbox{
    border-radius: 10px 10px 10px 10px;

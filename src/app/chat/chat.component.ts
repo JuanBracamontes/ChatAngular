@@ -8,7 +8,7 @@ import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/databa
 export class ChatComponent implements OnInit {
 
   listaMensajes: FirebaseListObservable<any[]>;
-  titulo: string = "Invitado";
+  titulo: string = "Tu";
   mensaje:string = "";
   editarTitulo:boolean = true;
   MostrarChat:boolean=false;
@@ -26,7 +26,5 @@ export class ChatComponent implements OnInit {
       "mensaje": mensaje
     })
     this.mensaje="";
-
   }
-
 }

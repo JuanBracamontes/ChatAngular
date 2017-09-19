@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { AngularFireModule } from 'angularfire2';
 import { environment } from '../environments/environment';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { ListatareaComponent } from './listatarea/listatarea.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
     BodyComponent,
     NavbarComponent,
     FooterComponent,
-    ChatComponent
+    ChatComponent,
+    ListatareaComponent
   ],
   imports: [
     BrowserModule,
