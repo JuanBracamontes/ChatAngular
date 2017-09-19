@@ -23,9 +23,11 @@
     </div>
   </div>
   <div class="col-4">
-
+    <div class="addtareas">
+      <h2 class="at">Agregar Tareas Nuevas</h2>
+      <input type="text" class="form-control textbox" [(ngModel)]="nombretarea" (keyup.enter)="enviartarea(nombretarea)">
+      <button class="btn btn-success btnagregar" (click)="enviartarea(nombretarea)"> Agregar <i class="fa fa-plus" aria-hidden="true"></i></button>
+    </div>
   </div>
 </div>
-<!--<div class="tareas">-->
-<!--<button class="btn btn-success btnagregar">Agregar</button>-->
-<!--</div>-->
+
