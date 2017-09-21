@@ -16,14 +16,21 @@
 
         <div class="row" style="margin-left: 0; margin-right: 0;" *ngFor="let tarea of tareasvistas | async">
 
-          <div class="col-9 tareanueva">{{tarea.tareasvistas}}</div>
+          <div class="col-9 tareanueva">
+            <span *ngIf="!tarea.editar">{{tarea.tareasvistas}}</span>
+            <input type="text" id="{{tarea.$key}}" (keyup.enter)="editarTarea(tareaEditada,tarea.$key)" [(ngModel)]="tareaEditada" style ="margin-top: 5px;" *ngIf="tarea.editar" (keyup.enter)="editarTarea(tareaEditada)">
+          </div>
 
           <div class="col-1 pencil" style="background-color: white; margin-top: 20px;">
-            <i class="fa fa-pencil iconPencil" aria-hidden="true"></i>
+            <i class="fa fa-pencil iconPencil" *ngIf="!tarea.editar" (click)="cambiarBoolean(tarea.$key)"
+               aria-hidden="true"></i>
+            <i class="fa fa-check" aria-hidden="true" (click)="editarTarea(tareaEditada,tarea.$key)  " style="margin-top: 14px;" *ngIf="tarea.editar"></i>
+
           </div>
 
           <div class="col-1 trash" style="background-color: white; margin-top: 20px;">
-            <i class="fa fa-trash iconTrash" aria-hidden="true"></i>
+            <i class="fa fa-trash iconTrash" *ngIf="!tarea.editar" aria-hidden="true"></i>
+            <i class="fa fa-times" aria-hidden="true" style="margin-top: 14px;" (click)="cancelarEditar(tarea.$key)" *ngIf="tarea.editar"></i>
 
           </div>
 
@@ -36,8 +43,8 @@
   <div class="col-4">
     <div class="addtareas">
       <h2 class="at">Agregar Tareas Nuevas</h2>
-      <input type="text" class="form-control textbox" [(ngModel)]="nombretarea"
-             (keyup.enter)="enviartarea(nombretarea)">
+      <input type="text" class="form-control textbox"  [(ngModel)]="nombretarea"
+             (keyup.enter)="enviartarea(nombretarea)" placeholder="Escribe una tarea">
       <button class="btn btn-success btnagregar" (click)="enviartarea(nombretarea)"> Agregar <i class="fa fa-plus"
                                                                                                 aria-hidden="true"></i>
       </button>
